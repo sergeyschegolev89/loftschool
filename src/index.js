@@ -13,7 +13,7 @@
  Другими словами: функция должна возвращать в неизменном виде то, что поступает ей на вход
  */
 function returnFirstArgument(a) {
-	return a;
+    return a;
 }
 
 /*
@@ -31,10 +31,11 @@ function returnFirstArgument(a) {
    sumWithDefaults(10) вернет 110
  */
 function sumWithDefaults(a, b) {
-	if(b===undefined) {
-		b=100	
-	};
-	return a+b;
+    if (b===undefined) {
+        b=100
+    }
+
+    return a+b;
 }
 
 /*
@@ -46,7 +47,7 @@ function sumWithDefaults(a, b) {
    returnFnResult(() => 'привет') вернет 'привет'
  */
 function returnFnResult(fn) {
-	return fn();
+    return fn();
 }
 
 /*
@@ -63,9 +64,10 @@ function returnFnResult(fn) {
    console.log(f()); // выведет 13
  */
 function returnCounter(number) {
-	number = (number===undefined)?0:number;			
-	var result = () => number = number + 1;
-	return result;
+    number = (number===undefined)?0:number;
+    var result = () => number = number + 1;
+
+    return result;
 }
 
 /*
@@ -78,11 +80,13 @@ function returnCounter(number) {
    returnArgumentsArray(1, 2, 3) вернет [1, 2, 3]
  */
 function returnArgumentsArray() {
-	var newArray = [];
-	for (var i = 0; i < arguments.length; i++) {
-		newArray.push(arguments[i]);
-	}
-	return newArray;
+    var newArray = [];
+
+    for (var i = 0; i < arguments.length; i++) {
+        newArray.push(arguments[i]);
+    }
+
+    return newArray;
 }
 
 /*
@@ -100,18 +104,21 @@ function returnArgumentsArray() {
 
    console.log(newSum()) выведет 6
  */
-function bindFunction(fn) {	
-	var argNew = [];
-	var argfunc;
-	for (var i = 0; i < arguments.length; i++) {
-		if(typeof arguments[i] === 'function') {
-			argfunc = arguments[i];
-			continue;
-		}			
-		argNew.push(arguments[i]);
-	}
-	var result = () => argfunc(...argNew);
-	return result;
+function bindFunction() {
+    var argNew = [];
+
+    var argfunc;
+
+    for (var i = 0; i < arguments.length; i++) {
+        if (typeof arguments[i] === 'function') {
+            argfunc = arguments[i];
+            continue;
+        }
+        argNew.push(arguments[i]);
+    }
+    var result = () => argfunc(...argNew);
+
+    return result;
 }
 
 export {
