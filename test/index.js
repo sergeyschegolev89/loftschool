@@ -99,13 +99,14 @@ describe('ДЗ 1 - функции', () => {
             return [...arguments].join('');
         }
 
+
         it('должна возвращать функцию', () => {
             let result = bindFunction(fn);
 
             assert.typeOf(result, 'function');
         });
 
-        it('должна привязывать любое кол-во аргументов возвращаемой функции', () => {
+        it('должна привязывать любое кол-во аргументов возвращаемой функции ', () => {
 
             let result = bindFunction(fn, ...valuesArr);
 
